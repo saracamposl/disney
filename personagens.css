@@ -27,12 +27,18 @@
 
 .main-cointainer {
   display: grid;
-  grid-template-columns: 1fr 2fr 2fr;
+  grid-template-areas:  "menu-lateral conteudo menu-direito"
+                        "menu-lateral conteudo menu-direito"
+                        "menu-lateral conteudo menu-direito"
+                        "menu-lateral conteudo menu-direito"
+                        "menu-lateral sobre menu-direito";
 }
 
 .main-cointainer .menu-lateral {
   background-color: #ddd;
   padding: 10px 20px;
+  grid-area: menu-lateral;
+  text-align: center;
 }
 
 .main-cointainer .menu-lateral li {
@@ -42,6 +48,40 @@
   text-align: center;
 }
 
+.main-cointainer .menu-direito {
+  background-color: #ddd;
+  grid-area: menu-direito;
+  text-align: center;
+}
+
+.main-cointainer .menu-direito li {
+  margin-bottom: 10px;
+  list-style: none;
+  justify-content: center;
+  text-align: center;
+}
+
+.conteudo {
+  display: flex;
+  grid-area: conteudo;
+}
+
 .news {
   padding: 10px 20px;
+}
+
+.sobre {
+  padding: 20px;
+  grid-area: sobre;
+}
+
+.parecidos {
+  display: flex;
+  padding: 30px 20px;
+  justify-content: center;
+  text-align: center;  
+}
+
+.parecidos h3 {
+  margin-bottom: 40px;
 }
